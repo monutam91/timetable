@@ -1,0 +1,16 @@
+div.add-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    mat-toolbar {
+        display: flex;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 10px;
+    }
+}
