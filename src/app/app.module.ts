@@ -7,7 +7,8 @@ import {
     MatFormFieldModule,
     MatToolbarModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -24,7 +25,8 @@ import { AddFormComponent } from './add-form/add-form.component';
         MatInputModule,
         MatSelectModule,
         MatFormFieldModule,
-        MatButtonModule
+        MatButtonModule,
+        MatListModule
     ],
     providers: [ClassesService],
     bootstrap: [AppComponent]

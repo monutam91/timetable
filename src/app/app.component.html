@@ -4,10 +4,13 @@
             <h2 class="day-name">
                 {{ day.day }}
             </h2>
-            <div class="classes">
-                <div class="class" *ngFor="let course of day.courses">
-                    {{ course | json }}
-                </div>
+            <div class="courses">
+                <mat-list>
+                    <mat-list-item *ngFor="let course of day.courses">
+                        <h2 mat-line> {{ course.name }} </h2>
+                        <span mat-line>{{ course.start }} - {{ course.end }}, {{ course.place }}</span>
+                    </mat-list-item>
+                </mat-list>
             </div>
         </div>
     </div>
