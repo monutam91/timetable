@@ -1,0 +1,45 @@
+:host {
+    width: 100%;
+    height: 100%;
+
+    div.app-root {
+        display: flex;
+
+        div.classes {
+            display: flex;
+            flex: 2;
+
+            div.day {
+                display: flex;
+                flex-direction: column;
+                flex: 1 0;
+                max-width: 20%;
+
+                h2.day-name {
+                    text-align: center;
+                }
+
+                div.courses {
+                    display: flex;
+                    flex: 1 0;
+                    width: 100%;
+
+                    mat-list {
+                        width: 100%;
+
+                        mat-list-item {
+                            // Because magenta is love, magenta is life
+                            background: magenta;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        tt-add-form {
+            display: flex;
+            flex: 1;
+        }
+    }
+}

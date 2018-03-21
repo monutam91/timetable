@@ -1,0 +1,27 @@
+<div class="add-form">
+    <mat-toolbar color="primary">
+        <span>Add course</span>
+    </mat-toolbar>
+    <form (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <input matInput name="name" placeholder="Course Name" type="text" [(ngModel)]="course.name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput name="place" placeholder="Place" type="text" [(ngModel)]="course.place">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select placeholder="Day" [(ngModel)]="course.day" name="day">
+                <mat-option *ngFor="let day of days" [value]="day">
+                    {{ day }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Start time" name="start" type="time" [(ngModel)]="course.start">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="End time" name="end" type="time" [(ngModel)]="course.end">
+        </mat-form-field>
+        <button type="submit" mat-button>Add</button>
+    </form>
+</div>
