@@ -17,13 +17,10 @@ export class AppComponent {
     constructor(private _classes: ClassesService) {
         this.classes$ = _classes.classes$.pipe(
             map(classes => {
-                return Array.from(classes.entries()).map(entry => {
-                    const asd = {
-                        day: Days[entry[0].toLowerCase()],
-                        courses: entry[1]
-                    };
-                    return asd;
-                });
+                return Array.from(classes.entries()).map(entry => ({
+                    day: Days[entry[0].toLowerCase()],
+                    courses: entry[1]
+                }));
             })
         );
     }

@@ -35,9 +35,9 @@ export class ClassesService implements OnDestroy {
     }
 
     private initClasses() {
+        // We need to get the existing classes, but also if there aren't any, we need to initialize the member with a new Map
         const classes: any[] = JSON.parse(localStorage.getItem(this.CLASSES_LOCAL_STORAGE_KEY)) || [];
 
-        // We need to get the existing classes, but also if there aren't any, we need to initialize the member with a new Map
         this._classesMap = new Map<Days, Course[]>(classes);
 
         // We get the key of the Days enum, then iterate over it to initialize every day which isn't already inside the map
