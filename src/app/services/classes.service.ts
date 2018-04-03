@@ -1,8 +1,9 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs/Observable';
+import { first, map } from 'rxjs/operators';
 
 import { Days, Course } from '../models';
-import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ClassesService implements OnDestroy {
@@ -32,6 +33,16 @@ export class ClassesService implements OnDestroy {
 
     public get classes$(): Observable<Map<Days, Course[]>> {
         return this._classes$.asObservable();
+    }
+
+    public getClass(id: string): Observable<Course> {
+        return this.classes$.pipe(
+            first(),
+            map(classes => {
+                const classList: Course[] = [].concat(...Array.from(classes.values()));
+                return classList.find(course => course.id === id);
+            })
+        );
     }
 
     private initClasses() {

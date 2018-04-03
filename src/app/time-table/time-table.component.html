@@ -1,0 +1,17 @@
+<div class="timetable-root">
+    <mat-tab-group>
+        <mat-tab [label]="day.day" *ngFor="let day of classes$ | async">
+            <div class="courses">
+                <mat-list>
+                    <mat-list-item *ngFor="let course of day.courses" (click)="openCourse(course)">
+                        <h2 mat-line> {{ course.name }} </h2>
+                        <span mat-line>{{ course.start }} - {{ course.end }}, {{ course.place }}</span>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+    <a class="add" mat-fab color="primary" routerLink="/add">
+        <mat-icon aria-label="Add new class">add</mat-icon>
+    </a>
+</div>

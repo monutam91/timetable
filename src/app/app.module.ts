@@ -8,27 +8,37 @@ import {
     MatToolbarModule,
     MatSelectModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatTabsModule,
+    MatIconModule,
+    MatCardModule
 } from '@angular/material';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ClassesService } from './services';
+import { ClassesService, ClassDetailResolver } from './services';
 import { AddFormComponent } from './add-form/add-form.component';
+import { TimeTableComponent } from './time-table/time-table.component';
+import { ClassDetailComponent } from './class-detail/class-detail.component';
 
 @NgModule({
-    declarations: [AppComponent, AddFormComponent],
+    declarations: [AppComponent, AddFormComponent, TimeTableComponent, ClassDetailComponent],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
+        AppRoutingModule,
         FormsModule,
         MatToolbarModule,
         MatInputModule,
         MatSelectModule,
         MatFormFieldModule,
         MatButtonModule,
-        MatListModule
+        MatListModule,
+        MatTabsModule,
+        MatIconModule,
+        MatCardModule
     ],
-    providers: [ClassesService],
+    providers: [ClassesService, ClassDetailResolver],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
